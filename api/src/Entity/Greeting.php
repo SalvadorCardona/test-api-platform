@@ -28,8 +28,23 @@ class Greeting
     #[Assert\NotBlank]
     public string $name = '';
 
+    #[ORM\ManyToOne(inversedBy: 'greetings')]
+    private ?Test $test = null;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getTest(): ?Test
+    {
+        return $this->test;
+    }
+
+    public function setTest(?Test $test): self
+    {
+        $this->test = $test;
+
+        return $this;
     }
 }

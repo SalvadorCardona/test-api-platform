@@ -17,7 +17,6 @@ const Admin = () => {
       <Head>
         <title>API Platform Admin</title>
       </Head>
-
       {DynamicAdmin}
     </>
   );
